@@ -1,52 +1,73 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Angelynn Arts</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Angelynn Arts</title>
+    <style>
+        /* 1. FONT DEFINITIONS (Keeping your working jsDelivr links) */
+        @font-face {
+            font-family: 'BodoniModa';
+            src: url('https://jsdelivr.net') format('truetype');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'EloquentJF';
+            src: url('https://jsdelivr.net') format('truetype');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'IvyPresto';
+            src: url('https://jsdelivr.net') format('truetype');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JeanneModerno';
+            src: url('https://jsdelivr.net') format('truetype');
+            font-display: swap;
+        }
 
-<style>
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #F3DEFA;
-    overflow: hidden;
-    touch-action: pan-y;
-}
+        /* 2. DESKTOP LAYOUT (Preserving your perfect settings) */
+        body, html {
+            margin: 0; padding: 0;
+            height: 100%; width: 100%;
+            overflow: hidden; 
+            background-color: #F3DEFA; /* ✅ FIXED HERE */
+        }
 
-/* CONTAINER */
-.iframe-container {
-    position: fixed;
-    top: -65px; /* hide Wix banner */
-    left: 50%;
-    width: 360px; /* match your phone width */
-    height: calc(100% + 65px);
-    transform: translateX(-50%);
-    overflow: hidden;
-}
+        .iframe-container {
+            position: absolute;
+            top: -50px; 
+            left: 0;
+            width: 100%;
+            height: calc(100% + 50px);
+        }
+        iframe {
+            width: 100%; height: 100%;
+            border: none;
+        }
 
-/* IFRAME */
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-}
-
-/* SCALE UP slightly to fill screen nicely */
-@media (max-width: 400px) {
-    .iframe-container {
-        transform: translateX(-50%) scale(1.08);
-        transform-origin: top center;
-    }
-}
-</style>
+        /* 3. THE MOBILE "ZOOM" FIX (Only affects phones) */
+        @media (max-width: 768px) {
+            .iframe-container {
+                top: -65px; 
+                height: calc(100% + 65px);
+                overflow: hidden;
+            }
+            iframe {
+                /* This stretches the 320px Wix site to fill a 412px Samsung screen */
+                width: 100vw !important;
+                transform: scale(1.28); 
+                transform-origin: 0 0;
+                width: 78.125% !important; /* Counteracts the scale to keep aspect ratio */
+                height: 78.125% !important;
+            }
+        }
+    </style>
 </head>
-
 <body>
-<div class="iframe-container">
-    <iframe src="https://angelynnarts.wixsite.com/angelynnarts" allowfullscreen></iframe>
-</div>
+    <div class="iframe-container">
+        <iframe src="https://angelynnarts.wixsite.com/angelynnarts" allowfullscreen></iframe>
+    </div>
 </body>
 </html>
