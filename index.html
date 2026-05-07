@@ -1,91 +1,52 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Angelynn Arts</title>
 
 <style>
-/* ===== FONTS (fixed GitHub raw links — update filenames if needed) ===== */
-@font-face {
-  font-family: 'BodoniModa';
-  src: url('https://raw.githubusercontent.com/angelynnarts/mysite-fonts/main/BodoniModa.ttf') format('truetype');
+/* RESET */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 🔥 locks ALL scrolling */
+    background-color: #F3DEFA;
 }
 
-@font-face {
-  font-family: 'EloquentJF';
-  src: url('https://raw.githubusercontent.com/angelynnarts/mysite-fonts/main/EloquentJF.ttf') format('truetype');
+/* CONTAINER */
+.iframe-container {
+    position: fixed;
+    top: -65px; /* hide Wix banner */
+    left: 0;
+    width: 100%;
+    height: calc(100% + 65px);
+    overflow: hidden; /* 🔥 prevents internal panning */
 }
 
-/* ===== BASE ===== */
+/* IFRAME */
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* EXTRA MOBILE LOCK */
 body {
-  margin: 0;
-  background-color: #F3DEFA;
-  font-family: 'BodoniModa', serif;
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  height: 100vh;
-  background: url('https://static.wixstatic.com/media/your-image.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 48px;
-  color: #000;
-}
-
-/* ===== SECTION ===== */
-.section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.section img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ===== BUTTON ===== */
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #000;
-  color: #fff;
-  text-decoration: none;
-  margin-top: 20px;
-}
-
-/* ===== MOBILE (match Wix stacking style) ===== */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .section {
-    padding: 40px 15px;
-  }
+    touch-action: none; /* disables swipe panning */
 }
 </style>
+
 </head>
 
 <body>
-
-<!-- HERO -->
-<section class="hero">
-  <h1>Angelynn Arts</h1>
-</section>
-
-<!-- CONTENT -->
-<section class="section">
-  <img src="https://static.wixstatic.com/media/your-image2.jpg">
-  <p>Artwork description or text here</p>
-  <a href="#" class="button">View More</a>
-</section>
-
+<div class="iframe-container">
+    <iframe src="https://angelynnarts.wixsite.com/angelynnarts" allowfullscreen></iframe>
+</div>
 </body>
 </html>
