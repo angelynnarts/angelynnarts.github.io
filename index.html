@@ -6,47 +6,39 @@
 <title>Angelynn Arts</title>
 
 <style>
-/* RESET */
+/* RESET + BACKGROUND */
 html, body {
     margin: 0;
     padding: 0;
-    width: 100%;
     height: 100%;
-    overflow: hidden; /* 🔥 locks ALL scrolling */
     background-color: #F3DEFA;
+    overflow: hidden;              /* prevents horizontal movement */
+    touch-action: pan-y;           /* allow only vertical scrolling */
 }
 
-/* CONTAINER */
+/* IFRAME CONTAINER */
 .iframe-container {
     position: fixed;
-    top: -65px; /* hide Wix banner */
+    top: -65px;                    /* hides Wix banner */
     left: 0;
     width: 100%;
     height: calc(100% + 65px);
-    overflow: hidden; /* 🔥 prevents internal panning */
+    overflow: hidden;              /* prevents internal overflow */
 }
 
 /* IFRAME */
 iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     border: none;
-}
-
-/* EXTRA MOBILE LOCK */
-body {
-    touch-action: none; /* disables swipe panning */
+    display: block;
 }
 </style>
-
 </head>
 
 <body>
 <div class="iframe-container">
-    <iframe src="https://angelynnarts.wixsite.com/angelynnarts"></iframe>
+    <iframe src="https://angelynnarts.wixsite.com/angelynnarts" allowfullscreen></iframe>
 </div>
 </body>
 </html>
